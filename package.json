@@ -1,0 +1,45 @@
+{
+  "name": "three-tensorflowjs-face-mesh-filters",
+  "description": "Creating custom face filters using threejs and displaying on web using tensorflowjs",
+  "version": "1.0.0",
+  "homepage": "https://static.umu.to/threejs-tensorflowjs-face-mesh",
+  "main": "dist/index.html",
+  "author": "Umut Karakulak",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umutto/three-tensorflowjs-face-mesh-filters.git"
+  },
+  "watch": {
+    "build:dev": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "js,scss,html"
+    }
+  },
+  "scripts": {
+    "build:prod": "set NODE_ENV=production && run-s compile:pages compile:js compile:css",
+    "build:dev": "run-s compile:pages compile:js compile:css server:start",
+    "compile:pages": "if exist dist ( rmdir /s/q dist ) && mkdir dist && copy .\\src\\*.html dist /Y",
+    "compile:js": "rollup --config",
+    "compile:css": "npx tailwindcss -i ./src/stylesheets/style.scss -o ./dist/stylesheets/style.css",
+    "watch": "npm-watch",
+    "server:start": "http-server -s",
+    "server:open": "open-cli http://localhost:8080/dist"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "merge": "^2.1.1",
+    "npm-run-all": "^4.1.5",
+    "npm-watch": "^0.10.0",
+    "open-cli": "^6.0.1",
+    "postcss": "^8.3.5",
+    "postcss-cli": "^7.1.1",
+    "postcss-import": "^12.0.1",
+    "rollup": "^2.52.1",
+    "tailwindcss": "^2.2.2"
+  },
+  "dependencies": {}
+}
