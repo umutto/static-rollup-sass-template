@@ -25,7 +25,8 @@
     "compile:css": "npx tailwindcss -i ./src/stylesheets/style.scss -o ./dist/stylesheets/style.css",
     "watch": "npm-watch",
     "server:start": "http-server -s",
-    "server:open": "open-cli http://localhost:8080/dist"
+    "server:open": "open-cli http://localhost:8080/dist",
+    "dev": "run-p watch server:start server:open"
   },
   "keywords": [],
   "license": "MIT",
@@ -39,6 +40,9 @@
     "postcss-cli": "^7.1.1",
     "postcss-import": "^12.0.1",
     "rollup": "^2.52.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^7.0.2",
     "tailwindcss": "^2.2.2"
   },
   "dependencies": {}
