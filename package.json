@@ -19,13 +19,14 @@
   },
   "scripts": {
     "build:prod": "set NODE_ENV=production && run-s compile:pages compile:js compile:css",
-    "build:dev": "run-s compile:pages compile:js compile:css server:start",
+    "build:dev": "run-s compile:pages compile:js compile:css",
     "compile:pages": "if exist dist ( rmdir /s/q dist ) && mkdir dist && copy .\\src\\*.html dist /Y",
     "compile:js": "rollup --config",
     "compile:css": "npx tailwindcss -i ./src/stylesheets/style.scss -o ./dist/stylesheets/style.css",
     "watch": "npm-watch",
     "server:start": "http-server -s",
-    "server:open": "open-cli http://localhost:8080/dist"
+    "server:open": "open-cli http://localhost:8080/dist",
+    "dev": "run-p watch server:start server:open"
   },
   "keywords": [],
   "license": "MIT",
