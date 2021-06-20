@@ -1,2 +1,3 @@
-# static-rollup-tailwind-template
-Static site template using rollup and tailwind bundles
+# static-rollup-sass-template
+
+Static site template using rollup and sass bundles

@@ -1,13 +1,13 @@
 {
-  "name": "three-tensorflowjs-face-mesh-filters",
-  "description": "Creating custom face filters using threejs and displaying on web using tensorflowjs",
+  "name": "static-rollup-sass-template",
+  "description": "Static site template using rollup and sass bundles",
   "version": "1.0.0",
-  "homepage": "https://static.umu.to/threejs-tensorflowjs-face-mesh",
+  "homepage": "https://static.umu.to/static-rollup-sass-template",
   "main": "dist/index.html",
   "author": "Umut Karakulak",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/umutto/three-tensorflowjs-face-mesh-filters.git"
+    "url": "git+https://github.com/umutto/static-rollup-sass-template.git"
   },
   "watch": {
     "build:dev": {
@@ -22,7 +22,7 @@
     "build:dev": "run-s compile:pages compile:js compile:css server:start",
     "compile:pages": "if exist dist ( rmdir /s/q dist ) && mkdir dist && copy src\\*.html dist /Y && if exist src\\favicon.ico ( copy src\\favicon.ico dist\\favicon.ico ) && mkdir dist\\assets && Xcopy src\\assets dist\\assets\\ /S",
     "compile:js": "rollup --config",
-    "compile:css": "npx tailwindcss -i ./src/stylesheets/style.scss -o ./dist/stylesheets/style.css",
+    "compile:css": "sass --no-source-map src/stylesheets/style.scss dist/stylesheets/style.css",
     "watch": "npm-watch",
     "server:start": "http-server -s",
     "server:open": "open-cli http://localhost:8080/dist",
@@ -31,19 +31,15 @@
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^10.2.6",
     "merge": "^2.1.1",
     "npm-run-all": "^4.1.5",
     "npm-watch": "^0.10.0",
     "open-cli": "^6.0.1",
-    "postcss": "^8.3.5",
-    "postcss-cli": "^7.1.1",
-    "postcss-import": "^12.0.1",
     "rollup": "^2.52.1",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^7.0.2",
-    "tailwindcss": "^2.2.2"
+    "sass": "^1.35.1"
   },
   "dependencies": {}
 }
