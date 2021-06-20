@@ -1,6 +1,6 @@
 {
   "name": "static-rollup-sass-template",
-  "description": "Static site template using rollup and sass bundles",
+  "description": "A very simplistic static site template using rollup and sass bundles for prototypes.",
   "version": "1.0.0",
   "homepage": "https://static.umu.to/static-rollup-sass-template",
   "main": "dist/index.html",
