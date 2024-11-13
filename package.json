@@ -14,23 +14,24 @@
       "patterns": [
         "src"
       ],
-      "extensions": "js,scss,html"
+      "extensions": "ts,js,scss,html"
     }
   },
   "scripts": {
     "build:prod": "set NODE_ENV=production && run-s compile:pages compile:js compile:css",
     "build:dev": "run-s compile:pages compile:js compile:css server:start",
-    "compile:pages": "if exist dist ( rmdir /s/q dist ) && mkdir dist && copy src\\*.html dist /Y && if exist src\\favicon.ico ( copy src\\favicon.ico dist\\favicon.ico ) && mkdir dist\\assets && Xcopy src\\assets dist\\assets\\ /S",
+    "compile:pages": "if exist dist ( rmdir /s/q dist ) && mkdir dist",
     "compile:js": "rollup --config",
     "compile:css": "sass --no-source-map src/stylesheets/style.scss dist/stylesheets/style.css",
     "watch": "npm-watch",
     "server:start": "http-server -s",
-    "server:open": "open-cli http://localhost:8080/dist",
+    "server:open": "open-cli http://localhost:8080",
     "dev": "run-p watch server:start server:open"
   },
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
+    "@rollup/plugin-typescript": "^12.1.1",
     "http-server": "^14.1.1",
     "merge": "^2.1.1",
     "npm-run-all": "^4.1.5",
@@ -42,5 +43,8 @@
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.35.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "tslib": "^2.8.1",
+    "typescript": "^5.6.3"
+  }
 }

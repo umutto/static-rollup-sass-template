@@ -2,8 +2,10 @@ import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import { terser } from "rollup-plugin-terser";
 
+import typescript from "@rollup/plugin-typescript";
+
 export default {
-  input: "src/javascript/index.js",
+  input: "src/javascript/index.ts",
   output: {
     file: "dist/javascript/index.js",
     format: "cjs",
@@ -17,6 +19,7 @@ export default {
     commonjs({
       include: "node_modules/**",
     }),
-    terser()
+    terser(),
+    typescript(),
   ],
 };
