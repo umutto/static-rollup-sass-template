@@ -9,6 +9,7 @@ export default {
   output: {
     file: "dist/javascript/index.js",
     format: "cjs",
+    sourcemap: true,
   },
   plugins: [
     resolve({
@@ -20,6 +21,6 @@ export default {
       include: "node_modules/**",
     }),
     terser(),
-    typescript(),
+    typescript({ sourceMap: true }),
   ],
 };
